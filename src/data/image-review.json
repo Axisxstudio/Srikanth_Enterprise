@@ -1,0 +1,534 @@
+[
+  {
+    "product": "cmp-sheet",
+    "path": "01-Boards-and-Sheets/cmp-sheet/Poster-Views/WebP/product-detail.webp",
+    "status": "approved",
+    "notes": "Sheet extends beyond original poster; partial product view.",
+    "source": "Uploaded Srikantha.zip"
+  },
+  {
+    "product": "cmp-sheet",
+    "path": "01-Boards-and-Sheets/cmp-sheet/Poster-Views/WebP/application-kitchen.webp",
+    "status": "approved",
+    "notes": "Application example from poster, not verified customer project.",
+    "source": "Uploaded Srikantha.zip"
+  },
+  {
+    "product": "hardboard",
+    "path": "01-Boards-and-Sheets/hardboard/Poster-Views/WebP/main.webp",
+    "status": "approved",
+    "notes": "",
+    "source": "Uploaded Srikantha.zip"
+  },
+  {
+    "product": "hardboard",
+    "path": "01-Boards-and-Sheets/hardboard/Poster-Views/WebP/stack-detail.webp",
+    "status": "approved",
+    "notes": "Partial view of board stack.",
+    "source": "Uploaded Srikantha.zip"
+  },
+  {
+    "product": "hmr-boards",
+    "path": "01-Boards-and-Sheets/hmr-boards/Poster-Views/WebP/board-detail.webp",
+    "status": "approved",
+    "notes": "Partial view; full product photo overlaps logo and title.",
+    "source": "Uploaded Srikantha.zip"
+  },
+  {
+    "product": "osb-boards",
+    "path": "01-Boards-and-Sheets/osb-boards/Poster-Views/WebP/board-edge-detail.webp",
+    "status": "approved",
+    "notes": "Partial view; full board image is covered by text.",
+    "source": "Uploaded Srikantha.zip"
+  },
+  {
+    "product": "osb-boards",
+    "path": "01-Boards-and-Sheets/osb-boards/Poster-Views/WebP/application-interior.webp",
+    "status": "reference-only",
+    "notes": "Circular inset separated with transparent corners; existing border retained.",
+    "source": "Uploaded Srikantha.zip"
+  },
+  {
+    "product": "osb-boards",
+    "path": "01-Boards-and-Sheets/osb-boards/Small-References-Need-Original/WebP/application-drawers.webp",
+    "status": "reference-only",
+    "notes": "Circular inset separated with transparent corners; existing border retained. Small source: use only at small display sizes. Small original retained for completeness. This is NOT a high-detail replacement; request original photograph.",
+    "source": "Uploaded Srikantha.zip"
+  },
+  {
+    "product": "osb-boards",
+    "path": "01-Boards-and-Sheets/osb-boards/Small-References-Need-Original/WebP/board-sample.webp",
+    "status": "reference-only",
+    "notes": "Circular inset separated with transparent corners; existing border retained. Small source: use only at small display sizes. Small original retained for completeness. This is NOT a high-detail replacement; request original photograph.",
+    "source": "Uploaded Srikantha.zip"
+  },
+  {
+    "product": "osb-boards",
+    "path": "01-Boards-and-Sheets/osb-boards/Poster-Views/WebP/application-room.webp",
+    "status": "reference-only",
+    "notes": "Circular inset separated with transparent corners; existing border retained.",
+    "source": "Uploaded Srikantha.zip"
+  },
+  {
+    "product": "pvc-eco-board",
+    "path": "01-Boards-and-Sheets/pvc-eco-board/Poster-Views/WebP/main.webp",
+    "status": "approved",
+    "notes": "",
+    "source": "Uploaded Srikantha.zip"
+  },
+  {
+    "product": "pvc-eco-board",
+    "path": "01-Boards-and-Sheets/pvc-eco-board/Small-References-Need-Original/WebP/application-cabinet.webp",
+    "status": "reference-only",
+    "notes": "Small source: use only at small display sizes. Small original retained for completeness. This is NOT a high-detail replacement; request original photograph.",
+    "source": "Uploaded Srikantha.zip"
+  },
+  {
+    "product": "pvc-eco-board",
+    "path": "01-Boards-and-Sheets/pvc-eco-board/Small-References-Need-Original/WebP/application-wardrobe.webp",
+    "status": "reference-only",
+    "notes": "Small source: use only at small display sizes. Small original retained for completeness. This is NOT a high-detail replacement; request original photograph.",
+    "source": "Uploaded Srikantha.zip"
+  },
+  {
+    "product": "pvc-eco-board",
+    "path": "01-Boards-and-Sheets/pvc-eco-board/Small-References-Need-Original/WebP/application-kitchen.webp",
+    "status": "reference-only",
+    "notes": "Small source: use only at small display sizes. Small original retained for completeness. This is NOT a high-detail replacement; request original photograph.",
+    "source": "Uploaded Srikantha.zip"
+  },
+  {
+    "product": "high-gloss-white-melamine",
+    "path": "02-Melamine-and-Decorative-Boards/high-gloss-white-melamine/Small-References-Need-Original/WebP/main.webp",
+    "status": "reference-only",
+    "notes": "Existing watermark retained. Small source: use only at small display sizes. Small original retained for completeness. This is NOT a high-detail replacement; request original photograph.",
+    "source": "Uploaded Srikantha.zip"
+  },
+  {
+    "product": "high-gloss-white-melamine",
+    "path": "02-Melamine-and-Decorative-Boards/high-gloss-white-melamine/Small-References-Need-Original/WebP/gloss-detail.webp",
+    "status": "reference-only",
+    "notes": "Small source: use only at small display sizes. Small original retained for completeness. This is NOT a high-detail replacement; request original photograph.",
+    "source": "Uploaded Srikantha.zip"
+  },
+  {
+    "product": "high-gloss-white-melamine",
+    "path": "02-Melamine-and-Decorative-Boards/high-gloss-white-melamine/Poster-Views/WebP/application-kitchen-wide.webp",
+    "status": "reference-only",
+    "notes": "Existing watermark retained.",
+    "source": "Uploaded Srikantha.zip"
+  },
+  {
+    "product": "high-gloss-white-melamine",
+    "path": "02-Melamine-and-Decorative-Boards/high-gloss-white-melamine/Poster-Views/WebP/application-kitchen-close.webp",
+    "status": "approved",
+    "notes": "",
+    "source": "Uploaded Srikantha.zip"
+  },
+  {
+    "product": "melamine-mdf-light-wood",
+    "path": "02-Melamine-and-Decorative-Boards/melamine-mdf-light-wood/Small-References-Need-Original/WebP/finish-sample.webp",
+    "status": "reference-only",
+    "notes": "Small finish swatch; full board covered by badge. Small source: use only at small display sizes. Small original retained for completeness. This is NOT a high-detail replacement; request original photograph.",
+    "source": "Uploaded Srikantha.zip"
+  },
+  {
+    "product": "melamine-mdf-light-wood",
+    "path": "02-Melamine-and-Decorative-Boards/melamine-mdf-light-wood/Small-References-Need-Original/WebP/woodgrain-detail.webp",
+    "status": "reference-only",
+    "notes": "Partial surface view, not full board. Small source: use only at small display sizes. Small original retained for completeness. This is NOT a high-detail replacement; request original photograph.",
+    "source": "Uploaded Srikantha.zip"
+  },
+  {
+    "product": "white-melamine",
+    "path": "02-Melamine-and-Decorative-Boards/white-melamine/Poster-Views/WebP/main.webp",
+    "status": "approved",
+    "notes": "Board isolated along its existing outline; transparent outside that outline.",
+    "source": "Uploaded Srikantha.zip"
+  },
+  {
+    "product": "white-melamine",
+    "path": "02-Melamine-and-Decorative-Boards/white-melamine/Small-References-Need-Original/WebP/finish-sample.webp",
+    "status": "reference-only",
+    "notes": "Small source: use only at small display sizes. Small original retained for completeness. This is NOT a high-detail replacement; request original photograph.",
+    "source": "Uploaded Srikantha.zip"
+  },
+  {
+    "product": "jungle-teak-melamine",
+    "path": "02-Melamine-and-Decorative-Boards/jungle-teak-melamine/Poster-Views/WebP/main.webp",
+    "status": "approved",
+    "notes": "Board isolated along its existing outline; transparent outside that outline.",
+    "source": "Uploaded Srikantha.zip"
+  },
+  {
+    "product": "jungle-teak-melamine",
+    "path": "02-Melamine-and-Decorative-Boards/jungle-teak-melamine/Small-References-Need-Original/WebP/finish-sample.webp",
+    "status": "reference-only",
+    "notes": "Small source: use only at small display sizes. Small original retained for completeness. This is NOT a high-detail replacement; request original photograph.",
+    "source": "Uploaded Srikantha.zip"
+  },
+  {
+    "product": "white-mdf-melamine",
+    "path": "02-Melamine-and-Decorative-Boards/white-mdf-melamine/Poster-Views/WebP/main.webp",
+    "status": "approved",
+    "notes": "",
+    "source": "Uploaded Srikantha.zip"
+  },
+  {
+    "product": "white-mdf-melamine",
+    "path": "02-Melamine-and-Decorative-Boards/white-mdf-melamine/Small-References-Need-Original/WebP/alternate-stack.webp",
+    "status": "reference-only",
+    "notes": "Small source: use only at small display sizes. Small original retained for completeness. This is NOT a high-detail replacement; request original photograph.",
+    "source": "Uploaded Srikantha.zip"
+  },
+  {
+    "product": "white-mdf-melamine",
+    "path": "02-Melamine-and-Decorative-Boards/white-mdf-melamine/Small-References-Need-Original/WebP/edge-detail.webp",
+    "status": "reference-only",
+    "notes": "Small source: use only at small display sizes. Small original retained for completeness. This is NOT a high-detail replacement; request original photograph.",
+    "source": "Uploaded Srikantha.zip"
+  },
+  {
+    "product": "pvc-edge-band",
+    "path": "03-Edge-Banding-Materials/pvc-edge-band/Poster-Views/WebP/main.webp",
+    "status": "approved",
+    "notes": "Existing watermark retained; grouped finishes are a single source photo.",
+    "source": "Uploaded Srikantha.zip"
+  },
+  {
+    "product": "four-function-edge-bander",
+    "path": "04-Woodworking-Machinery/four-function-edge-bander/Small-References-Need-Original/WebP/main-closed.webp",
+    "status": "reference-only",
+    "notes": "Small inset; larger source needed for large display. Small source: use only at small display sizes. Small original retained for completeness. This is NOT a high-detail replacement; request original photograph.",
+    "source": "Uploaded Srikantha.zip"
+  },
+  {
+    "product": "four-function-edge-bander",
+    "path": "04-Woodworking-Machinery/four-function-edge-bander/Small-References-Need-Original/WebP/alternate-open.webp",
+    "status": "reference-only",
+    "notes": "Small inset; larger source needed for large display. Small source: use only at small display sizes. Small original retained for completeness. This is NOT a high-detail replacement; request original photograph.",
+    "source": "Uploaded Srikantha.zip"
+  },
+  {
+    "product": "four-function-edge-bander",
+    "path": "04-Woodworking-Machinery/four-function-edge-bander/Small-References-Need-Original/WebP/diagram-gluing.webp",
+    "status": "reference-only",
+    "notes": "Small source: use only at small display sizes. Small original retained for completeness. This is NOT a high-detail replacement; request original photograph.",
+    "source": "Uploaded Srikantha.zip"
+  },
+  {
+    "product": "four-function-edge-bander",
+    "path": "04-Woodworking-Machinery/four-function-edge-bander/Small-References-Need-Original/WebP/diagram-fine-trimming.webp",
+    "status": "reference-only",
+    "notes": "Small source: use only at small display sizes. Small original retained for completeness. This is NOT a high-detail replacement; request original photograph.",
+    "source": "Uploaded Srikantha.zip"
+  },
+  {
+    "product": "four-function-edge-bander",
+    "path": "04-Woodworking-Machinery/four-function-edge-bander/Small-References-Need-Original/WebP/diagram-scraping.webp",
+    "status": "reference-only",
+    "notes": "Small source: use only at small display sizes. Small original retained for completeness. This is NOT a high-detail replacement; request original photograph.",
+    "source": "Uploaded Srikantha.zip"
+  },
+  {
+    "product": "four-function-edge-bander",
+    "path": "04-Woodworking-Machinery/four-function-edge-bander/Small-References-Need-Original/WebP/diagram-buffing.webp",
+    "status": "reference-only",
+    "notes": "Small source: use only at small display sizes. Small original retained for completeness. This is NOT a high-detail replacement; request original photograph.",
+    "source": "Uploaded Srikantha.zip"
+  },
+  {
+    "product": "fully-automatic-edge-bander",
+    "path": "04-Woodworking-Machinery/fully-automatic-edge-bander/Small-References-Need-Original/WebP/mechanism-detail.webp",
+    "status": "reference-only",
+    "notes": "Full machine image overlaps this inset; request original main photo. Small source: use only at small display sizes. Small original retained for completeness. This is NOT a high-detail replacement; request original photograph.",
+    "source": "Uploaded Srikantha.zip"
+  },
+  {
+    "product": "fully-automatic-edge-bander",
+    "path": "04-Woodworking-Machinery/fully-automatic-edge-bander/Small-References-Need-Original/WebP/machine-upper-detail.webp",
+    "status": "reference-only",
+    "notes": "Partial view, not full machine. Small source: use only at small display sizes. Small original retained for completeness. This is NOT a high-detail replacement; request original photograph.",
+    "source": "Uploaded Srikantha.zip"
+  },
+  {
+    "product": "multi-boring-machine",
+    "path": "04-Woodworking-Machinery/multi-boring-machine/Small-References-Need-Original/WebP/drilling-detail.webp",
+    "status": "reference-only",
+    "notes": "Small source: use only at small display sizes. Small original retained for completeness. This is NOT a high-detail replacement; request original photograph.",
+    "source": "Uploaded Srikantha.zip"
+  },
+  {
+    "product": "multi-boring-machine",
+    "path": "04-Woodworking-Machinery/multi-boring-machine/Small-References-Need-Original/WebP/spindles-detail.webp",
+    "status": "reference-only",
+    "notes": "Inset overlaps full machine at its top; crop excludes overlap. Small source: use only at small display sizes. Small original retained for completeness. This is NOT a high-detail replacement; request original photograph.",
+    "source": "Uploaded Srikantha.zip"
+  },
+  {
+    "product": "multi-boring-machine",
+    "path": "04-Woodworking-Machinery/multi-boring-machine/Small-References-Need-Original/WebP/clamping-detail.webp",
+    "status": "reference-only",
+    "notes": "Small source: use only at small display sizes. Small original retained for completeness. This is NOT a high-detail replacement; request original photograph.",
+    "source": "Uploaded Srikantha.zip"
+  },
+  {
+    "product": "multi-boring-machine",
+    "path": "04-Woodworking-Machinery/multi-boring-machine/Poster-Views/WebP/machine-body-detail.webp",
+    "status": "reference-only",
+    "notes": "Partial machine view; left extension occluded by inset photos.",
+    "source": "Uploaded Srikantha.zip"
+  },
+  {
+    "product": "portable-panel-saw",
+    "path": "04-Woodworking-Machinery/portable-panel-saw/Poster-Views/WebP/saw-table-detail.webp",
+    "status": "approved",
+    "notes": "Partial main machine view; frame extends beyond original poster.",
+    "source": "Uploaded Srikantha.zip"
+  },
+  {
+    "product": "portable-panel-saw",
+    "path": "04-Woodworking-Machinery/portable-panel-saw/Small-References-Need-Original/WebP/router-bit-set.webp",
+    "status": "reference-only",
+    "notes": "Accessory shown on this poster; inclusion in sale must be confirmed. Small source: use only at small display sizes. Small original retained for completeness. This is NOT a high-detail replacement; request original photograph.",
+    "source": "Uploaded Srikantha.zip"
+  },
+  {
+    "product": "portable-panel-saw",
+    "path": "04-Woodworking-Machinery/portable-panel-saw/Small-References-Need-Original/WebP/compact-saw.webp",
+    "status": "reference-only",
+    "notes": "Accessory shown on this poster; inclusion in sale must be confirmed. Small source: use only at small display sizes. Small original retained for completeness. This is NOT a high-detail replacement; request original photograph.",
+    "source": "Uploaded Srikantha.zip"
+  },
+  {
+    "product": "portable-panel-saw",
+    "path": "04-Woodworking-Machinery/portable-panel-saw/Small-References-Need-Original/WebP/mini-edge-bander.webp",
+    "status": "reference-only",
+    "notes": "Accessory shown on this poster; inclusion in sale must be confirmed. Small source: use only at small display sizes. Small original retained for completeness. This is NOT a high-detail replacement; request original photograph.",
+    "source": "Uploaded Srikantha.zip"
+  },
+  {
+    "product": "portable-panel-saw",
+    "path": "04-Woodworking-Machinery/portable-panel-saw/Small-References-Need-Original/WebP/router.webp",
+    "status": "reference-only",
+    "notes": "Accessory shown on this poster; inclusion in sale must be confirmed. Small source: use only at small display sizes. Small original retained for completeness. This is NOT a high-detail replacement; request original photograph.",
+    "source": "Uploaded Srikantha.zip"
+  },
+  {
+    "product": "portable-edge-bander",
+    "path": "04-Woodworking-Machinery/portable-edge-bander/Poster-Views/WebP/main.webp",
+    "status": "approved",
+    "notes": "Right edge reaches original poster boundary; dotted callout remains. Inset excluded by transparent mask.",
+    "source": "Uploaded Srikantha.zip"
+  },
+  {
+    "product": "portable-edge-bander",
+    "path": "04-Woodworking-Machinery/portable-edge-bander/Small-References-Need-Original/WebP/edge-finish-detail.webp",
+    "status": "reference-only",
+    "notes": "Circular inset separated with transparent corners; existing border retained. Small source: use only at small display sizes. Small original retained for completeness. This is NOT a high-detail replacement; request original photograph.",
+    "source": "Uploaded Srikantha.zip"
+  },
+  {
+    "product": "portable-edge-bander",
+    "path": "04-Woodworking-Machinery/portable-edge-bander/Small-References-Need-Original/WebP/control-detail.webp",
+    "status": "reference-only",
+    "notes": "Circular inset separated with transparent corners; existing border retained. Small source: use only at small display sizes. Small original retained for completeness. This is NOT a high-detail replacement; request original photograph.",
+    "source": "Uploaded Srikantha.zip"
+  },
+  {
+    "product": "portable-edge-bander",
+    "path": "04-Woodworking-Machinery/portable-edge-bander/Small-References-Need-Original/WebP/mechanism-detail.webp",
+    "status": "reference-only",
+    "notes": "Circular inset separated with transparent corners; existing border retained. Small source: use only at small display sizes. Small original retained for completeness. This is NOT a high-detail replacement; request original photograph.",
+    "source": "Uploaded Srikantha.zip"
+  },
+  {
+    "product": "sliding-table-panel-saw-3200",
+    "path": "04-Woodworking-Machinery/sliding-table-panel-saw-3200/Small-References-Need-Original/WebP/table-detail.webp",
+    "status": "reference-only",
+    "notes": "Partial machine view; full machine is overlapped by insets and labels. Small source: use only at small display sizes. Small original retained for completeness. This is NOT a high-detail replacement; request original photograph.",
+    "source": "Uploaded Srikantha.zip"
+  },
+  {
+    "product": "sliding-table-panel-saw-3200",
+    "path": "04-Woodworking-Machinery/sliding-table-panel-saw-3200/Small-References-Need-Original/WebP/control-detail.webp",
+    "status": "reference-only",
+    "notes": "Circular inset separated with transparent corners; existing border retained. Small source: use only at small display sizes. Small original retained for completeness. This is NOT a high-detail replacement; request original photograph.",
+    "source": "Uploaded Srikantha.zip"
+  },
+  {
+    "product": "sliding-table-panel-saw-3200",
+    "path": "04-Woodworking-Machinery/sliding-table-panel-saw-3200/Small-References-Need-Original/WebP/blade-detail.webp",
+    "status": "reference-only",
+    "notes": "Circular inset separated with transparent corners; existing border retained. Small source: use only at small display sizes. Small original retained for completeness. This is NOT a high-detail replacement; request original photograph.",
+    "source": "Uploaded Srikantha.zip"
+  },
+  {
+    "product": "sliding-table-panel-saw-3200",
+    "path": "04-Woodworking-Machinery/sliding-table-panel-saw-3200/Small-References-Need-Original/WebP/sliding-rail-detail.webp",
+    "status": "reference-only",
+    "notes": "Circular inset separated with transparent corners; existing border retained. Small source: use only at small display sizes. Small original retained for completeness. This is NOT a high-detail replacement; request original photograph.",
+    "source": "Uploaded Srikantha.zip"
+  },
+  {
+    "product": "table-edge-bander",
+    "path": "04-Woodworking-Machinery/table-edge-bander/Small-References-Need-Original/WebP/main-workshop-view.webp",
+    "status": "reference-only",
+    "notes": "Small inset; original full-size photo needed for large display. Small source: use only at small display sizes. Small original retained for completeness. This is NOT a high-detail replacement; request original photograph.",
+    "source": "Uploaded Srikantha.zip"
+  },
+  {
+    "product": "table-edge-bander",
+    "path": "04-Woodworking-Machinery/table-edge-bander/Small-References-Need-Original/WebP/machine-detail.webp",
+    "status": "reference-only",
+    "notes": "Partial view excludes inset and feature labels. Small source: use only at small display sizes. Small original retained for completeness. This is NOT a high-detail replacement; request original photograph.",
+    "source": "Uploaded Srikantha.zip"
+  },
+  {
+    "product": "pneumatic-trimming-tool",
+    "path": "05-Tools-and-Material-Handling/pneumatic-trimming-tool/Small-References-Need-Original/WebP/main-side-view.webp",
+    "status": "reference-only",
+    "notes": "Small inset; original needed for product hero. Small source: use only at small display sizes. Small original retained for completeness. This is NOT a high-detail replacement; request original photograph.",
+    "source": "Uploaded Srikantha.zip"
+  },
+  {
+    "product": "pneumatic-trimming-tool",
+    "path": "05-Tools-and-Material-Handling/pneumatic-trimming-tool/Small-References-Need-Original/WebP/tool-detail.webp",
+    "status": "reference-only",
+    "notes": "Partial view; main tool overlaps poster text. Small source: use only at small display sizes. Small original retained for completeness. This is NOT a high-detail replacement; request original photograph.",
+    "source": "Uploaded Srikantha.zip"
+  },
+  {
+    "product": "pallet-truck",
+    "path": "05-Tools-and-Material-Handling/pallet-truck/Small-References-Need-Original/WebP/fork-and-wheel-detail.webp",
+    "status": "reference-only",
+    "notes": "Partial view; complete standalone truck overlaps title. Small source: use only at small display sizes. Small original retained for completeness. This is NOT a high-detail replacement; request original photograph.",
+    "source": "Uploaded Srikantha.zip"
+  },
+  {
+    "product": "pallet-truck",
+    "path": "05-Tools-and-Material-Handling/pallet-truck/Poster-Views/WebP/application-warehouse.webp",
+    "status": "approved",
+    "notes": "Warehouse scene from poster; not verified shop photo.",
+    "source": "Uploaded Srikantha.zip"
+  },
+  {
+    "product": "hardboard",
+    "path": "01-Boards-and-Sheets/hardboard/Online-Alternative-Confirm/WebP/main.webp",
+    "status": "pending",
+    "notes": "Hardboard category reference. Manufacturer, grade and thickness are not confirmed as shop stock.",
+    "source": "https://kbanltd.com/product/0606-85-316-in-x-4ft-x-8-ftcellotex-hardboard"
+  },
+  {
+    "product": "hmr-boards",
+    "path": "01-Boards-and-Sheets/hmr-boards/Online-Alternative-Confirm/WebP/main.webp",
+    "status": "pending",
+    "notes": "HMR category reference. Stack layout differs from poster; brand/grade not confirmed.",
+    "source": "https://www.balibuildingsolutions.com/shop/high-moisture-resistance-hmr-1238"
+  },
+  {
+    "product": "osb-boards",
+    "path": "01-Boards-and-Sheets/osb-boards/Online-Alternative-Confirm/WebP/main.webp",
+    "status": "pending",
+    "notes": "OSB category reference. Not an exact-source-photo match; confirm grade and supplier.",
+    "source": "https://www.dickhaus.com/detalle/11078-placa-osb-multiplac-12x2-44x1-22"
+  },
+  {
+    "product": "high-gloss-white-melamine",
+    "path": "02-Melamine-and-Decorative-Boards/high-gloss-white-melamine/Online-Alternative-Confirm/WebP/main.webp",
+    "status": "pending",
+    "notes": "High-gloss white melamine category reference from a different supplier. Confirm core and finish. Medium-resolution source.",
+    "source": "https://topnain.com/products/melamina-high-gloss-blanco-tablero-de-18mm-pelikano"
+  },
+  {
+    "product": "melamine-mdf-light-wood",
+    "path": "02-Melamine-and-Decorative-Boards/melamine-mdf-light-wood/Online-Alternative-Confirm/WebP/main.webp",
+    "status": "pending",
+    "notes": "Real manufacturer photo of light woodgrain melamine MDF. Exact decorative finish is NOT matched.",
+    "source": "https://www.spf.co.id/products/laminated-board/melamine-faced-mdf"
+  },
+  {
+    "product": "white-melamine",
+    "path": "02-Melamine-and-Decorative-Boards/white-melamine/Online-Alternative-Confirm/WebP/main.webp",
+    "status": "pending",
+    "notes": "White melamine reference from Egger stock. Brand, board core and finish not confirmed as shop stock.",
+    "source": "https://www.esteba.com/ca/melamina-egger-w960-blanc-classic-2"
+  },
+  {
+    "product": "white-mdf-melamine",
+    "path": "02-Melamine-and-Decorative-Boards/white-mdf-melamine/Sourced-Same-Photo/WebP/main.webp",
+    "status": "pending",
+    "notes": "Same two-board composition as the centre image in the uploaded poster. Product certification/brand is not inferred from source page.",
+    "source": "https://buildersmerchant.com/products/white-melamine-mdf-18mm"
+  },
+  {
+    "product": "four-function-edge-bander",
+    "path": "04-Woodworking-Machinery/four-function-edge-bander/Online-Alternative-Confirm/WebP/main.webp",
+    "status": "pending",
+    "notes": "Related blue-lid factory machine, supplier lists ZC300B. Model/function equivalence to shop machine is NOT verified.",
+    "source": "https://qdzhongchi.en.made-in-china.com/product/PfnUAwsvnFWc/China-4-Stage-Fine-Trimming-Woodworking-Machine-Edge-Banding-for-Plywood-MDF-with-Motor-Engine-Bearing-Core-Components.html"
+  },
+  {
+    "product": "fully-automatic-edge-bander",
+    "path": "04-Woodworking-Machinery/fully-automatic-edge-bander/Online-Alternative-Confirm/WebP/main.webp",
+    "status": "pending",
+    "notes": "RB 50A five-function alternative. Exact machine in shop poster is NOT verified; do not publish as exact stock.",
+    "source": "https://www.rbwoodcn.com/show-49-204-1.html"
+  },
+  {
+    "product": "multi-boring-machine",
+    "path": "04-Woodworking-Machinery/multi-boring-machine/Sourced-Same-Photo/WebP/main.webp",
+    "status": "approved",
+    "notes": "Same MZ73212 front-facing photograph/layout and model lettering visible in shop poster. Source identifies the same model; inventory still requires shop confirmation.",
+    "source": "https://hqwoodmachine.com/en/product/53.html"
+  },
+  {
+    "product": "portable-panel-saw",
+    "path": "04-Woodworking-Machinery/portable-panel-saw/Online-Alternative-Confirm/WebP/main.webp",
+    "status": "pending",
+    "notes": "Gold-frame portable sliding saw, JT-11 listing. Similar design; shop model and included accessories are not confirmed.",
+    "source": "https://www.alibaba.com/showroom/chinese-table-saw.html"
+  },
+  {
+    "product": "portable-edge-bander",
+    "path": "04-Woodworking-Machinery/portable-edge-bander/Online-Alternative-Confirm/WebP/main.webp",
+    "status": "pending",
+    "notes": "Close visual design match. Original poster does not expose a verifiable model number; confirm exact unit.",
+    "source": "https://www.ebay.com/itm/166274759526"
+  },
+  {
+    "product": "sliding-table-panel-saw-3200",
+    "path": "04-Woodworking-Machinery/sliding-table-panel-saw-3200/Online-Alternative-Confirm/WebP/main.webp",
+    "status": "pending",
+    "notes": "MJ6132 alternative. Cabinet/control details differ from poster; do not treat as confirmed exact machine.",
+    "source": "https://www.alibaba.com/showroom/mj6132-sliding-table-saw.html"
+  },
+  {
+    "product": "table-edge-bander",
+    "path": "04-Woodworking-Machinery/table-edge-bander/Online-Alternative-Confirm/WebP/main.webp",
+    "status": "pending",
+    "notes": "Close visual match: NEW MINI EDGE BANDING MACHINE, orange wheels and same base design. Model identity still needs shop confirmation.",
+    "source": "https://www.ebay.com/itm/187536956583"
+  },
+  {
+    "product": "pneumatic-trimming-tool",
+    "path": "05-Tools-and-Material-Handling/pneumatic-trimming-tool/Online-Alternative-Confirm/WebP/main.webp",
+    "status": "pending",
+    "notes": "Complete silver pneumatic chamfer tool with matching overall shape and adjustment style. Brand/model not readable in shop poster; confirm exact unit.",
+    "source": "https://www.walmart.com.mx/ip/00615668458904"
+  },
+  {
+    "product": "pallet-truck",
+    "path": "05-Tools-and-Material-Handling/pallet-truck/Online-Alternative-Confirm/WebP/main.webp",
+    "status": "pending",
+    "notes": "Unbranded-looking yellow 3000 kg design reference. Wheel/handle details and actual supplier not confirmed.",
+    "source": "https://www.regal-fermierul.ro/transpaleti/transpalet-manual-3000-kg-roti-poliuretan-furci-1200-mm"
+  },
+  {
+    "product": "jungle-teak-melamine",
+    "path": "02-Melamine-and-Decorative-Boards/jungle-teak-melamine/Online-Alternative-Confirm/WebP/alternative-finish-swatch.webp",
+    "status": "pending",
+    "notes": "Supplier calls this Jungle Teak, but grain differs from shop poster. NOT interchangeable without colour-code confirmation.",
+    "source": "https://bbmcgroup.com/product/melamine-mdf-jungle-teak/"
+  }
+]
