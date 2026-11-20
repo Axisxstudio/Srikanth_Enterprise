@@ -8,27 +8,36 @@ import { HeroCarousel } from '../components/hero'
 import { CategoryChips, ProductGrid, SearchField } from '../components/products'
 
 function CategoryGrid() {
-  return <section className="category-section section-space" aria-labelledby="shop-categories">
-    <div className="container">
-      <Reveal className="section-heading">
-        <div>
-          <p className="eyebrow">Shop by Category</p>
-          <h2 id="shop-categories">Everything your workshop needs.</h2>
+  return (
+    <section className="category-section section-space" aria-labelledby="shop-categories">
+      <div className="container">
+        <Reveal className="section-heading">
+          <div>
+            <p className="eyebrow">Shop by Category</p>
+            <h2 id="shop-categories">Everything your workshop needs.</h2>
+          </div>
+          <Link to="/products" className="text-link section-action">Explore all categories <ArrowRight size={19} /></Link>
+        </Reveal>
+        <div className="category-scroll-container">
+          <div className="category-track">
+            {[...categories, ...categories].map((category, index) => (
+              <div key={`${category.slug}-${index}`} className={`category-item-wrapper ${index >= categories.length ? 'mobile-only-clone' : ''}`}>
+                <Link to={categoryPath(category.slug)} className={`category-card category-card-${category.slug}`}>
+                  <div className="category-image" aria-hidden="true">
+                    <ProductImage image={approvedImages(productBySlug[category.imageProduct])[0]} icon={category.icon} showLabel={false} />
+                  </div>
+                  <div className="category-copy">
+                    <h3>{category.name}</h3>
+                    <ArrowRight size={22} aria-hidden="true" />
+                  </div>
+                </Link>
+              </div>
+            ))}
+          </div>
         </div>
-        <Link to="/products" className="text-link section-action">Explore all categories <ArrowRight size={19} /></Link>
-      </Reveal>
-      <div className="category-grid">
-        {categories.map((category, index) => <Reveal key={category.slug} delay={index * 0.05}>
-          <Link to={categoryPath(category.slug)} className={`category-card category-card-${category.slug}`}>
-            <div className="category-image" aria-hidden="true">
-              <ProductImage image={approvedImages(productBySlug[category.imageProduct])[0]} icon={category.icon} showLabel={false} />
-            </div>
-            <div className="category-copy"><h3>{category.name}</h3><ArrowRight size={23} aria-hidden="true" /></div>
-          </Link>
-        </Reveal>)}
       </div>
-    </div>
-  </section>
+    </section>
+  )
 }
 
 function FeaturedProducts() {

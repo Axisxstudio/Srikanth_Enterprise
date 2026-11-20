@@ -2,5 +2,6 @@ node_modules/
 dist/
 supplied-assets/
 Srikantha-Website-Assets-With-Banners.zip
+*.zip
 *.local
 *.log

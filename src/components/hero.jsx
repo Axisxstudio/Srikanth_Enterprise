@@ -1,7 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import { preload } from 'react-dom'
 import { Link } from 'react-router-dom'
-import { ArrowLeft, ArrowRight, Pause, Play } from 'lucide-react'
 import { motion } from 'motion/react'
 import { HERO_INTERVAL } from '../config/business'
 import { bannerSources, banners, categoryPath } from '../data/catalogue'
@@ -36,7 +35,6 @@ const slides = [
 
 export function HeroCarousel() {
   const reduced = useMedia('(prefers-reduced-motion: reduce)')
-  const [choice, setChoice] = useState(null)
   const [position, setPosition] = useState({ index: 0, revision: 0 })
   const [hovered, setHovered] = useState(false)
   const [focused, setFocused] = useState(false)
@@ -44,8 +42,8 @@ export function HeroCarousel() {
   const [firstSettled, setFirstSettled] = useState(false)
   const touch = useRef(null)
   const active = slides[position.index]
-  const playing = choice ?? !reduced
-  const running = playing && visible && !hovered && !focused
+  const running = visible && !hovered && !focused
+
   const { src, srcSet } = bannerSources(slides[0].banner)
   preload(src, { as: 'image', imageSrcSet: srcSet, imageSizes: '100vw', fetchPriority: 'high' })
 
@@ -105,13 +103,6 @@ export function HeroCarousel() {
                   <Link key={path} className={`button ${index === 0 ? 'button-primary' : 'button-light-outline'}`} to={path}>{label}</Link>)}
               </div>
             </motion.div>
-          </div>
-          <div className="hero-controls" aria-label="Carousel controls">
-            <button type="button" aria-label="Previous slide" onClick={() => move(-1)}><ArrowLeft size={19} /></button>
-            <button type="button" aria-label={playing ? 'Pause slides' : 'Play slides'} onClick={() => setChoice(!playing)}>
-              {playing ? <Pause size={17} /> : <Play size={17} />}
-            </button>
-            <button type="button" aria-label="Next slide" onClick={() => move(1)}><ArrowRight size={19} /></button>
           </div>
         </div>
       </div>

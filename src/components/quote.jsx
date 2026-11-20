@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react'
+import { useId, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { ArrowRight, Clipboard, Mail, MessageCircle, Trash2 } from 'lucide-react'
 import { business, whatsappLink } from '../config/business'
@@ -6,18 +6,22 @@ import { productPath } from '../data/catalogue'
 import { Dialog } from './dialogs'
 import { useEnquiry } from './enquiry-state'
 
-function ItemQuantity({ item, onUpdate }) {
+function optionDescription(options) {
+  return options.map(({ label, value }) => `${label}: ${value}`).join(', ')
+}
+
+function ItemQuantity({ item, name, onUpdate }) {
   const [draft, setDraft] = useState(null)
   const [invalid, setInvalid] = useState(false)
-  const errorId = `quantity-error-${item.product.slug}`
+  const errorId = useId()
   return <>
     <input className="quantity-input" type="number" min="1" max="9999" step="1" required inputMode="numeric"
-      aria-label={`Quantity for ${item.product.name}`} value={draft ?? item.quantity}
+      aria-label={`Quantity for ${name}`} value={draft ?? item.quantity}
       aria-invalid={invalid} aria-describedby={invalid ? errorId : undefined}
       onChange={event => {
         setDraft(event.target.value)
         setInvalid(!event.target.validity.valid)
-        onUpdate(item.product.slug, event.target.valueAsNumber)
+        onUpdate(item.id, event.target.valueAsNumber)
       }}
       onBlur={() => { setDraft(null); setInvalid(false) }} />
     {invalid && <span className="form-error quantity-error" id={errorId}>Enter a whole number between 1 and 9,999.</span>}
@@ -28,11 +32,18 @@ export function EnquiryItems({ onNavigate }) {
   const { items, update, remove } = useEnquiry()
   if (!items.length) return <p className="muted">Your enquiry list is empty. You can browse products or ask a general question.</p>
   return <ul className="enquiry-items">
-    {items.map(item => <li key={item.product.slug}>
-      <Link to={productPath(item.product.slug)} onClick={onNavigate}>{item.product.name}</Link>
-      <ItemQuantity item={item} onUpdate={update} />
-      <button type="button" className="icon-button remove-button" aria-label={`Remove ${item.product.name}`} onClick={() => remove(item.product.slug)}><Trash2 size={17} /></button>
-    </li>)}
+    {items.map(item => {
+      const options = optionDescription(item.options)
+      const name = options ? `${item.product.name}, ${options}` : item.product.name
+      return <li key={item.id}>
+        <div>
+          <Link to={productPath(item.product.slug)} onClick={onNavigate}>{item.product.name}</Link>
+          {options && <div className="muted enquiry-options">{options}</div>}
+        </div>
+        <ItemQuantity item={item} name={name} onUpdate={update} />
+        <button type="button" className="icon-button remove-button" aria-label={`Remove ${name}`} onClick={() => remove(item.id)}><Trash2 size={17} /></button>
+      </li>
+    })}
   </ul>
 }
 
@@ -77,7 +88,8 @@ function formatSummary(values, items) {
     `Phone: ${values.phone.trim()}`,
     values.email.trim() ? `Email: ${values.email.trim()}` : null,
     values.location.trim() ? `Delivery location: ${values.location.trim()}` : null,
-    ...(items.length ? ['', 'Products and quantities', ...items.map(({ product, quantity }) => `- ${product.name} × ${quantity}`)] : []),
+    ...(items.length ? ['', 'Products and quantities', ...items.map(({ product, quantity, options }) =>
+      `- ${product.name} × ${quantity}${options.length ? ` (${optionDescription(options)})` : ''}`)] : []),
     ...(values.message.trim() ? ['', `Message: ${values.message.trim()}`] : []),
   ].filter(line => line !== null).join('\n')
 }
