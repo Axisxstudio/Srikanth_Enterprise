@@ -1,4 +1,4 @@
-import { useLocation, useNavigate, useParams, useSearchParams } from 'react-router-dom'
+import { useNavigate, useParams, useSearchParams } from 'react-router-dom'
 import { categoryBySlug, categoryPath, matchProduct, products } from '../data/catalogue'
 import { Breadcrumbs, EmptyState, usePageMeta } from '../components/common'
 import { ProductFilters, ProductGrid } from '../components/products'
@@ -16,7 +16,6 @@ export default function Catalogue() {
 
 function CatalogueContent({ category }) {
   const [params, setParams] = useSearchParams()
-  const { pathname } = useLocation()
   const navigate = useNavigate()
   const query = params.get('q') || ''
   const selected = category?.slug || (Object.hasOwn(categoryBySlug, params.get('category')) ? params.get('category') : '')
@@ -47,7 +46,7 @@ function CatalogueContent({ category }) {
   }
 
   function clear() {
-    navigate({ pathname, search: '' })
+    navigate('/products')
   }
 
   return <div className="container route-container">
@@ -58,7 +57,8 @@ function CatalogueContent({ category }) {
       <p>{description}</p>
     </div>
     <ProductFilters query={query} onQuery={value => update({ q: value }, true)} category={selected} onCategory={selectCategory}
-      sort={sort} onSort={value => update({ sort: value === 'featured' ? '' : value })} onClear={clear} />
+      sort={sort} onSort={value => update({ sort: value === 'featured' ? '' : value })} onClear={clear}
+      canClear={Boolean(query || selected || sort !== 'featured' || page > 1)} />
     <p className="result-count" role="status">{results.length} {results.length === 1 ? 'product' : 'products'}{visible.length < results.length && ` · Showing ${visible.length}`}</p>
     {results.length ? <ProductGrid items={visible} /> :
       <EmptyState title="No products found" description="Try a different search or clear the filters.">

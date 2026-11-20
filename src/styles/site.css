@@ -239,6 +239,7 @@ h3 { font-size: clamp(1.04rem, 1.65vw, 1.5rem); }
 .filter-tools { display: flex; align-items: center; gap: 10px; font-size: .89rem; font-weight: 700; flex-wrap: wrap; }
 .filter-tools select { padding: 8px 30px 8px 12px; min-height: 42px; color: var(--ink); border: 1px solid #bdbdb4; border-radius: 6px; background: white; }
 .clear-button { padding: 8px 3px; border: 0; background: none; color: var(--orange-deep); text-decoration: underline; text-underline-offset: 3px; }
+.clear-button:disabled { color: var(--muted); opacity: .7; cursor: default; text-decoration: none; }
 .mobile-filter-toggle { display: none; }
 .result-count { margin: 13px 0 21px; color: var(--muted); font-weight: 750; font-size: .91rem; }
 .empty-state { display: grid; justify-items: center; gap: 11px; padding: clamp(26px, 4.5vw, 65px) 16px; text-align: center; background: var(--neutral); border: 1px solid var(--border); border-radius: var(--radius); }

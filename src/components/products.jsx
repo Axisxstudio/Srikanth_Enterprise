@@ -49,7 +49,7 @@ export function CategoryChips({ value, onChange }) {
   </div>
 }
 
-export function ProductFilters({ query, onQuery, category, onCategory, sort, onSort, onClear }) {
+export function ProductFilters({ query, onQuery, category, onCategory, sort, onSort, onClear, canClear }) {
   const [expanded, setExpanded] = useState(false)
   return <div className="catalogue-filters">
     <SearchField value={query} onChange={onQuery} />
@@ -65,7 +65,7 @@ export function ProductFilters({ query, onQuery, category, onCategory, sort, onS
           <option value="az">Name A–Z</option>
           <option value="za">Name Z–A</option>
         </select>
-        <button type="button" className="clear-button" onClick={onClear}>Clear filters</button>
+        <button type="button" className="clear-button" onClick={onClear} disabled={!canClear}>Clear filters</button>
       </div>
     </div>
   </div>
