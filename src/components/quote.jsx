@@ -2,7 +2,7 @@ import { useId, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { ArrowRight, Clipboard, Mail, MessageCircle, Trash2 } from 'lucide-react'
 import { business, whatsappLink } from '../config/business'
-import { productPath } from '../data/catalogue'
+import { approvedImages, productPath } from '../data/catalogue'
 import { Dialog } from './dialogs'
 import { useEnquiry } from './enquiry-state'
 
@@ -35,25 +35,60 @@ export function EnquiryItems({ onNavigate }) {
     {items.map(item => {
       const options = optionDescription(item.options)
       const name = options ? `${item.product.name}, ${options}` : item.product.name
-      return <li key={item.id}>
-        <div>
-          <Link to={productPath(item.product.slug)} onClick={onNavigate}>{item.product.name}</Link>
+      const image = approvedImages(item.product)[0]
+      return <li key={item.id} className="enquiry-item-row">
+        <Link to={productPath(item.product.slug)} onClick={onNavigate} className="enquiry-item-thumb" title={item.product.name}>
+          {image ? (
+            <img src={image.src} alt={item.product.name} />
+          ) : (
+            <div className="enquiry-item-fallback">{item.product.name.charAt(0)}</div>
+          )}
+        </Link>
+        <div className="enquiry-item-info">
+          <Link to={productPath(item.product.slug)} onClick={onNavigate} className="enquiry-item-name">{item.product.name}</Link>
           {options && <div className="muted enquiry-options">{options}</div>}
         </div>
-        <ItemQuantity item={item} name={name} onUpdate={update} />
-        <button type="button" className="icon-button remove-button" aria-label={`Remove ${name}`} onClick={() => remove(item.id)}><Trash2 size={17} /></button>
+        <div className="enquiry-item-ctrls">
+          <ItemQuantity item={item} name={name} onUpdate={update} />
+          <button type="button" className="icon-button remove-button" aria-label={`Remove ${name}`} title="Remove from enquiry" onClick={() => remove(item.id)}>
+            <Trash2 size={17} />
+          </button>
+        </div>
       </li>
     })}
   </ul>
 }
 
 export function EnquiryDrawer() {
-  const { open, setOpen, count } = useEnquiry()
+  const { open, setOpen, count, items } = useEnquiry()
   const close = () => setOpen(false)
+
+  const whatsappMessage = count > 0 ? [
+    `Quotation enquiry for ${business.name}:`,
+    '',
+    ...items.map(({ product, quantity, options }) =>
+      `• ${product.name} × ${quantity}${options.length ? ` (${optionDescription(options)})` : ''}`
+    ),
+    '',
+    `Could you please share pricing and availability?`,
+  ].join('\n') : `Hello Srikantha Enterprises, I would like to request a quotation for materials and woodworking equipment.`
+
+  const directWhatsapp = whatsappLink(whatsappMessage)
+
   return open && <Dialog title="Your enquiry" onClose={close} kind="enquiry-drawer">
     <p className="drawer-description">{count ? `${count} ${count === 1 ? 'item' : 'items'} selected. Review your quantities before requesting a quote.` : 'Choose products for a quote or contact us with a general enquiry.'}</p>
     {count > 0 && <EnquiryItems onNavigate={close} />}
     <div className="drawer-actions">
+      {count > 0 && (
+        <a
+          className="button button-whatsapp"
+          href={directWhatsapp}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <MessageCircle size={19} /> Enquire on WhatsApp
+        </a>
+      )}
       <Link className="button button-primary" to="/contact" onClick={close}>{count ? 'Continue to Quotation' : 'Request a Quote'} <ArrowRight size={19} /></Link>
       <Link className="button button-outline" to="/products" onClick={close}>Browse Products</Link>
     </div>
@@ -154,7 +189,27 @@ export function QuoteForm() {
         {errors.message && <span id="error-message" className="form-error">{errors.message}</span>}
         <span className="muted character-count" id="message-limit">{values.message.length} / {maxMessage}</span>
       </div>
-      <button type="submit" className="button button-primary">Prepare Enquiry <ArrowRight size={19} /></button>
+      <div className="quote-form-actions">
+        <button type="submit" className="button button-primary">Prepare Enquiry <ArrowRight size={19} /></button>
+        {items.length > 0 && (
+          <a
+            className="button button-whatsapp"
+            href={whatsappLink([
+              `Quotation enquiry for ${business.name}:`,
+              '',
+              ...items.map(({ product, quantity, options }) =>
+                `• ${product.name} × ${quantity}${options.length ? ` (${optionDescription(options)})` : ''}`
+              ),
+              '',
+              `Could you please share pricing and availability?`,
+            ].join('\n'))}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <MessageCircle size={19} /> Instant WhatsApp Quote
+          </a>
+        )}
+      </div>
     </form>
     {summary && <section className="summary-panel" aria-labelledby="summary-title">
       <h2 id="summary-title">Your enquiry summary</h2>
@@ -162,7 +217,7 @@ export function QuoteForm() {
       <textarea ref={summaryField} readOnly rows="8" aria-label="Enquiry summary" value={summary} />
       <div className="summary-actions">
         <button type="button" className="button button-primary" onClick={copy}><Clipboard size={17} /> Copy Enquiry</button>
-        {whatsapp && <a className="button button-outline" href={whatsapp}><MessageCircle size={17} /> Open WhatsApp</a>}
+        {whatsapp && <a className="button button-whatsapp" href={whatsapp} target="_blank" rel="noopener noreferrer"><MessageCircle size={17} /> Send via WhatsApp</a>}
         {email && <a className="button button-outline" href={email}><Mail size={17} /> Open Email</a>}
       </div>
       <p className="copy-status" role="status">{copyStatus}</p>
