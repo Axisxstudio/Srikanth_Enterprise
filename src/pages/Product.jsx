@@ -124,7 +124,7 @@ function ProductDetails({ product }) {
               <h2>Need materials for a larger project?</h2>
               <p>Build your enquiry list and share your requirements with our team.</p>
             </div>
-            <Link className="button detail-submit" to="/contact">Request a Quote <ArrowRight size={18} /></Link>
+            <Link className="button button-primary project-cta-button" to="/contact">Request a Quote <ArrowRight size={18} /></Link>
           </section>
         </div>
       </div>

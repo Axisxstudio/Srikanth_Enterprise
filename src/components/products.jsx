@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { ArrowRight, ChevronDown, ChevronLeft, ChevronRight, Maximize2, Plus, Search, SlidersHorizontal } from 'lucide-react'
 import { approvedImages, categories, categoryBySlug, productPath } from '../data/catalogue'
@@ -59,22 +59,80 @@ export function SearchField({ value, onChange, id = 'product-search' }) {
 }
 
 export function CategoryChips({ value, onChange }) {
-  return <div className="filter-chips" role="group" aria-label="Filter by category">
-    {[{ slug: '', name: 'All Products' }, ...categories].map(category =>
-      <button key={category.name} className="filter-chip" type="button" aria-pressed={category.slug === value} onClick={() => onChange(category.slug)}>{category.name}</button>
-    )}
-  </div>
+  const isMobile = useMedia('(max-width: 768px)')
+  const containerRef = useRef(null)
+  const isInteracting = useRef(false)
+  const resumeTimer = useRef(null)
+
+  const chipItems = [{ slug: '', name: 'All Products' }, ...categories]
+  const displayChips = isMobile ? [...chipItems, ...chipItems, ...chipItems] : chipItems
+
+  useEffect(() => {
+    if (!isMobile) return
+    const el = containerRef.current
+    if (!el) return
+    let animId
+    const step = () => {
+      if (!isInteracting.current && el) {
+        el.scrollLeft += 0.65
+        const third = el.scrollWidth / 3
+        if (el.scrollLeft >= third * 2) {
+          el.scrollLeft -= third
+        }
+      }
+      animId = requestAnimationFrame(step)
+    }
+    animId = requestAnimationFrame(step)
+    return () => cancelAnimationFrame(animId)
+  }, [isMobile])
+
+  const pause = () => {
+    isInteracting.current = true
+    if (resumeTimer.current) clearTimeout(resumeTimer.current)
+  }
+
+  const resume = () => {
+    if (resumeTimer.current) clearTimeout(resumeTimer.current)
+    resumeTimer.current = setTimeout(() => {
+      isInteracting.current = false
+    }, 1800)
+  }
+
+  return (
+    <div
+      className="filter-chips-wrapper"
+      ref={containerRef}
+      role="group"
+      aria-label="Filter by category"
+      onPointerDown={pause}
+      onPointerUp={resume}
+      onPointerCancel={resume}
+      onTouchStart={pause}
+      onTouchEnd={resume}
+      onWheel={pause}
+    >
+      <div className="filter-chips">
+        {displayChips.map((category, index) => (
+          <button
+            key={`${category.slug || 'all'}-${index}`}
+            className="filter-chip"
+            type="button"
+            aria-pressed={category.slug === value}
+            onClick={() => onChange(category.slug)}
+          >
+            {category.name}
+          </button>
+        ))}
+      </div>
+    </div>
+  )
 }
 
 export function ProductFilters({ query, onQuery, category, onCategory, sort, onSort, onClear, canClear }) {
-  const [expanded, setExpanded] = useState(false)
   return <div className="catalogue-filters">
     <SearchField value={query} onChange={onQuery} />
-    <button className="button button-outline mobile-filter-toggle" type="button" aria-expanded={expanded} aria-controls="filter-options" onClick={() => setExpanded(!expanded)}>
-      <SlidersHorizontal size={17} /> Filters &amp; sort <ChevronDown size={17} />
-    </button>
-    <div id="filter-options" className={`filter-options${expanded ? ' expanded' : ''}`}>
-      <CategoryChips value={category} onChange={onCategory} />
+    <CategoryChips value={category} onChange={onCategory} />
+    <div className="filter-options">
       <div className="filter-tools">
         <label htmlFor="catalogue-sort">Sort</label>
         <select id="catalogue-sort" value={sort} onChange={event => onSort(event.target.value)}>
@@ -82,7 +140,7 @@ export function ProductFilters({ query, onQuery, category, onCategory, sort, onS
           <option value="az">Name A–Z</option>
           <option value="za">Name Z–A</option>
         </select>
-        <button type="button" className="clear-button" onClick={onClear} disabled={!canClear}>Clear filters</button>
+        {canClear && <button type="button" className="clear-button" onClick={onClear}>Clear filters</button>}
       </div>
     </div>
   </div>

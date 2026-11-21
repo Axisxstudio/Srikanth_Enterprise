@@ -242,7 +242,7 @@ h3 { font-size: clamp(1.04rem, 1.65vw, 1.5rem); }
 .category-item-wrapper { min-width: 0; }
 .mobile-only-clone { display: none; }
 
-.product-grid { display: grid; gap: clamp(11px, 1.45vw, 21px); grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.product-grid { display: grid; gap: clamp(14px, 1.8vw, 24px); grid-template-columns: repeat(4, minmax(0, 1fr)); margin-top: clamp(20px, 3.5vw, 32px); }
 .category-grid > *, .product-grid > * { min-width: 0; }
 
 .category-card {
@@ -513,13 +513,25 @@ h3 { font-size: clamp(1.04rem, 1.65vw, 1.5rem); }
 }
 .search-field input::placeholder { color: #8c918f; }
 
+.filter-chips-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  padding: 6px 0 10px 0;
+  margin-top: 14px;
+  margin-bottom: clamp(16px, 3.5vw, 26px);
+}
+.filter-chips-wrapper::-webkit-scrollbar { display: none; }
 .filter-options { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 14px; }
-.filter-chips { display: flex; flex-wrap: wrap; gap: 8px 10px; align-items: center; margin: 0; }
+.filter-chips { display: flex; flex-wrap: nowrap; gap: 10px; align-items: center; width: max-content; margin: 0; }
 .filter-chip {
   display: inline-flex; align-items: center; justify-content: center; padding: 8px 18px;
   min-height: 38px; border-radius: 9999px; font-size: 0.88rem; font-weight: 650;
   border: 1px solid #dcd6cc; background: #f4efe8; color: #4a524e; cursor: pointer;
-  transition: all .18s ease; white-space: nowrap;
+  transition: all .18s ease; white-space: nowrap; flex-shrink: 0;
 }
 .filter-chip:hover { background: #ebe4da; color: var(--ink); border-color: #cbbead; }
 .filter-chip[aria-pressed="true"] {
@@ -775,10 +787,8 @@ h3 { font-size: clamp(1.04rem, 1.65vw, 1.5rem); }
   .section-heading { align-items: flex-start; flex-direction: column; gap: 8px; }
   .section-heading > .text-link { padding-block: 4px; }
   .product-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .mobile-filter-toggle { display: inline-flex; margin-bottom: 4px; }
-  .filter-options { display: none; }
-  .filter-options.expanded { display: flex; margin-top: 10px; }
-  .filter-options .filter-chips { margin-bottom: 2px; }
+  .mobile-filter-toggle { display: none; }
+  .filter-options { display: flex; justify-content: space-between; align-items: center; width: 100%; margin-top: 6px; }
   .contact-layout, .about-feature { grid-template-columns: 1fr; }
   .about-image { aspect-ratio: 1.55; }
 }
