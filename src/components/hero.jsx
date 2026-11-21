@@ -1,7 +1,8 @@
 import { useEffect, useRef, useState } from 'react'
 import { preload } from 'react-dom'
 import { Link } from 'react-router-dom'
-import { motion } from 'motion/react'
+import { ArrowRight } from 'lucide-react'
+import { motion, useScroll, useTransform } from 'motion/react'
 import { HERO_INTERVAL } from '../config/business'
 import { bannerSources, banners, categoryPath } from '../data/catalogue'
 import { BannerImage, useMedia } from './common'
@@ -10,7 +11,7 @@ const slides = [
   {
     label: 'Boards & Sheets',
     eyebrow: 'Srikantha Enterprises',
-    heading: ['Better materials.', 'Smarter machinery.'],
+    heading: 'Better materials. Smarter machinery.',
     description: 'Explore boards, decorative finishes and woodworking equipment for your next project.',
     actions: [['Browse Products', '/products'], ['Request a Quote', '/contact']],
     banner: banners.workshop,
@@ -18,15 +19,15 @@ const slides = [
   {
     label: 'Woodworking Machinery',
     eyebrow: 'Woodworking Machinery',
-    heading: ['Equip your workshop', 'for what’s next.'],
-    description: 'Explore machinery for cutting, edge banding and furniture production.',
-    actions: [['Explore Machinery', categoryPath('woodworking-machinery')], ['Enquire Now', '/contact']],
+    heading: 'Build better.\nWork\nsmarter.',
+    description: 'Machinery and materials for your next big project.',
+    actions: [['Explore Machinery', categoryPath('woodworking-machinery'), ArrowRight], ['Enquire Now', '/contact']],
     banner: banners.machinery,
   },
   {
     label: 'Decorative Finishes',
     eyebrow: 'Boards & Decorative Finishes',
-    heading: ['The right finish starts', 'with the right board.'],
+    heading: 'The right finish starts with the right board.',
     description: 'Discover boards and decorative materials for furniture and interior projects.',
     actions: [['Explore Boards', categoryPath('boards-sheets')], ['View Melamine & Finishes', categoryPath('melamine-finishes')]],
     banner: banners.materials,
@@ -35,6 +36,9 @@ const slides = [
 
 export function HeroCarousel() {
   const reduced = useMedia('(prefers-reduced-motion: reduce)')
+  const desktopMotion = useMedia('(min-width: 961px) and (prefers-reduced-motion: no-preference)')
+  const { scrollY } = useScroll()
+  const imageOffset = useTransform(scrollY, [0, 520], [0, 40])
   const [position, setPosition] = useState({ index: 0, revision: 0 })
   const [hovered, setHovered] = useState(false)
   const [focused, setFocused] = useState(false)
@@ -81,14 +85,15 @@ export function HeroCarousel() {
         if (Math.abs(x) > 55 && Math.abs(x) > Math.abs(y) * 1.5) move(x < 0 ? 1 : -1)
       }}>
       <div className="hero-stage">
-        <div className="hero-images" aria-hidden="true">
+        <motion.div className={`hero-images${desktopMotion ? ' hero-images-scroll' : ''}`} aria-hidden="true"
+          style={desktopMotion ? { y: imageOffset } : undefined}>
           {slides.map(({ banner }, index) => (index === 0 || position.index === index || firstSettled) && (
             <BannerImage key={banner.file} banner={banner} priority={index === 0}
               className={`hero-image hero-image-${index}${position.index === index ? ' is-active' : ''}`}
               onLoad={index === 0 ? () => setFirstSettled(true) : undefined}
               onError={index === 0 ? () => setFirstSettled(true) : undefined} />
           ))}
-        </div>
+        </motion.div>
         <div className="hero-overlay" />
         <div className="container hero-inner">
           <div className="hero-copy" aria-live={running ? 'off' : 'polite'} role="group"
@@ -96,11 +101,14 @@ export function HeroCarousel() {
             <motion.div key={position.index} initial={reduced ? false : { opacity: 0.5, y: 8 }}
               animate={{ opacity: 1, y: 0 }} transition={{ duration: reduced ? 0 : 0.38 }}>
               <p className="eyebrow">{active.eyebrow}</p>
-              <h1>{active.heading.map(line => <span key={line}>{line}</span>)}</h1>
+              <h1>{active.heading}</h1>
               <p className="hero-description">{active.description}</p>
               <div className="hero-actions">
-                {active.actions.map(([label, path], index) =>
-                  <Link key={path} className={`button ${index === 0 ? 'button-primary' : 'button-light-outline'}`} to={path}>{label}</Link>)}
+                {active.actions.map(([label, path, Icon], index) => (
+                  <Link key={path} className={`button ${index === 0 ? 'button-primary' : 'button-light-outline'}`} to={path}>
+                    {label}{Icon && <Icon size={19} aria-hidden="true" />}
+                  </Link>
+                ))}
               </div>
             </motion.div>
           </div>

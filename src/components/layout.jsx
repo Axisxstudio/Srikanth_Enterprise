@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
+import { motion, useScroll } from 'motion/react'
 import {
   ArrowRight,
   ChevronDown,
@@ -83,6 +84,11 @@ function CategoryNavigation() {
       </ul>
     </nav>
   )
+}
+
+function HomeScrollProgress() {
+  const { scrollYProgress } = useScroll()
+  return <motion.div className="home-scroll-progress" aria-hidden="true" style={{ scaleX: scrollYProgress }} />
 }
 
 export function SiteHeader() {
@@ -200,6 +206,7 @@ export function SiteHeader() {
           </button>
         </div>
       </div>
+      {pathname === '/' && <HomeScrollProgress />}
       {panel === 'menu' && <MobileMenu onClose={close} onEnquiry={() => { close(); setOpen(true) }} />}
     </header>
   )

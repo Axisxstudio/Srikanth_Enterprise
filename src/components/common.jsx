@@ -69,8 +69,8 @@ export function SectionHeading({ eyebrow, title, action, children }) {
 export function Reveal({ children, className, delay = 0, as = 'div' }) {
   const reduced = useMedia('(prefers-reduced-motion: reduce)')
   const Component = motion[as]
-  return <Component className={className} initial={reduced ? false : { y: 9 }} whileInView={{ y: 0 }}
-    viewport={{ once: true, amount: 0.15 }} transition={{ duration: reduced ? 0 : 0.34, delay: reduced ? 0 : delay }}>
+  return <Component className={className} initial={reduced ? false : { opacity: 0.72, y: 15 }} whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true, amount: 0.15 }} transition={{ duration: reduced ? 0 : 0.42, delay: reduced ? 0 : Math.min(delay, 0.14), ease: 'easeOut' }}>
     {children}
   </Component>
 }
