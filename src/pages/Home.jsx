@@ -24,12 +24,12 @@ function CategoryGrid() {
           </div>
           <div className="scroll-heading-actions">
             <Link to="/products" className="text-link section-action">Explore all categories <ArrowRight size={19} /></Link>
-            <ScrollControls viewport={row} controls="category-rail" label="product categories" />
+            <ScrollControls viewport={row} controls="category-rail" label="product categories" autoAdvance={4000} />
           </div>
         </Reveal>
         <div id="category-rail" className="scroll-rail category-track" ref={row} role="group" aria-label="Scrollable product categories" tabIndex={0}>
           {categories.map(category => (
-            <Link key={category.slug} to={categoryPath(category.slug)} className={`category-card category-card-${category.slug}`}>
+            <Link key={category.slug} to={categoryPath(category.slug)} className="category-card">
               <div className="category-image" aria-hidden="true">
                 <ProductImage image={approvedImages(productBySlug[category.imageProduct])[0]} icon={category.icon} showLabel={false} />
               </div>
