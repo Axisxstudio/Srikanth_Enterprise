@@ -96,6 +96,8 @@ export function SiteHeader() {
   const [searchOpen, setSearchOpen] = useState(false)
   const [query, setQuery] = useState('')
   const searchInputRef = useRef(null)
+  const searchToggleRef = useRef(null)
+  const restoreSearchFocus = useRef(false)
   const mobile = useMedia('(max-width: 960px)')
   const { pathname } = useLocation()
   const navigate = useNavigate()
@@ -118,6 +120,9 @@ export function SiteHeader() {
   useEffect(() => {
     if (searchOpen) {
       searchInputRef.current?.focus()
+    } else if (restoreSearchFocus.current) {
+      restoreSearchFocus.current = false
+      searchToggleRef.current?.focus()
     }
   }, [searchOpen])
 
@@ -132,9 +137,15 @@ export function SiteHeader() {
     }
   }
 
+  function closeSearch() {
+    restoreSearchFocus.current = true
+    setSearchOpen(false)
+  }
+
   function handleSearchKeyDown(event) {
     if (event.key === 'Escape') {
-      setSearchOpen(false)
+      event.preventDefault()
+      closeSearch()
     }
   }
 
@@ -146,14 +157,13 @@ export function SiteHeader() {
           <span><MapPin size={15} aria-hidden="true" />{business.location}</span>
         </div>
       </div>
-      <div className="container nav-inner">
+      <div className={`container nav-inner${searchOpen ? ' is-search-open' : ''}`}>
         <Brand />
 
         {!searchOpen && <CategoryNavigation />}
 
-        {/* Animated inline navbar search */}
-        <div className={`nav-search-wrapper${searchOpen ? ' is-active' : ''}`}>
-          <form className="nav-search-form" onSubmit={handleSearchSubmit}>
+        <div id="header-catalogue-search" className={`nav-search-wrapper${searchOpen ? ' is-active' : ''}`}>
+          <form className="nav-search-form" role="search" aria-label="Catalogue" onSubmit={handleSearchSubmit} onKeyDown={handleSearchKeyDown}>
             <Search size={19} className="nav-search-icon" aria-hidden="true" />
             <input
               ref={searchInputRef}
@@ -161,8 +171,7 @@ export function SiteHeader() {
               className="nav-search-input"
               value={query}
               onChange={e => setQuery(e.target.value)}
-              onKeyDown={handleSearchKeyDown}
-              placeholder="Search products, materials, machinery…"
+              placeholder={mobile ? 'Search products…' : 'Search products, materials, machinery…'}
               aria-label="Search catalogue"
             />
             {query && (
@@ -179,7 +188,7 @@ export function SiteHeader() {
             <button
               type="button"
               className="icon-button nav-search-close"
-              onClick={() => setSearchOpen(false)}
+              onClick={closeSearch}
               aria-label="Close search"
             >
               <X size={20} />
@@ -190,9 +199,11 @@ export function SiteHeader() {
         <div className="nav-actions">
           {!searchOpen && (
             <button
+              ref={searchToggleRef}
               className="icon-button header-search"
               type="button"
               aria-label="Search catalogue"
+              aria-controls="header-catalogue-search"
               onClick={() => setSearchOpen(true)}
             >
               <Search size={22} />
